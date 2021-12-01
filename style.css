@@ -1,0 +1,49 @@
+
+body{
+    font-family: "Source sans pro", sans-serif;
+    
+    padding: 0 1rem;
+}
+
+.table{
+    width: 100%;
+    border-collapse: collapse;
+    
+}
+
+.table td{
+    border:1px solid #eee;
+    padding: .5rem;
+}
+
+#loader{
+    display: flex;
+    align-items: center;
+}
+#loader:after{
+    content:" ";
+    margin-left: 1rem;
+    background: red;
+    display: inline-block;
+    border:3px dashed black;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    
+/*    transform: ;*/
+    
+    animation: 3s infinite normal rotate;
+}
+
+@keyframes rotate {
+  from {
+   transform: rotateZ(0deg);
+   
+  }
+
+  to {
+       transform: rotateZ(360deg);
+
+   
+  }
+}
