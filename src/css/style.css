@@ -1,0 +1,83 @@
+
+body{
+    font-family: "Source sans pro", sans-serif;
+
+    padding: 0 1rem;
+    background: #eee;
+}
+main{
+    margin: auto;
+    background: #fff;
+    padding: 1rem;
+
+    box-shadow: #bfbfbf 1px 1px 3px;
+
+}
+.table{
+    width: 100%;
+    border-collapse: collapse;
+
+}
+
+.table td{
+    border:1px solid #eee;
+    padding: .5rem;
+    width: 50%;
+    word-break: break-word;
+}
+
+button{
+    background: #36d2e1;
+    outline: none;
+    color: #ffffff;
+    padding:.5rem 1rem;
+    font-weight: bold;
+    border:none;
+    cursor: pointer;
+}
+
+button:hover,button:active,button:focus{
+    background: #268491;
+
+}
+
+button:disabled{
+    background: #c1c1c1;
+
+}
+#refresh-container{
+    display: flex;
+    align-items: center;
+}
+#loader:after{
+    content:" ";
+    margin-left: 1rem;
+    display: inline-block;
+    border:3px dashed #36d2e1;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+
+    /*    transform: ;*/
+
+    animation: 3s infinite normal rotate;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotateZ(0deg);
+
+    }
+
+    to {
+        transform: rotateZ(360deg);
+
+
+    }
+}
+
+@media screen and (min-width: 1000px){
+    main{
+        max-width: 900px;
+    }
+}

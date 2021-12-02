@@ -65,8 +65,7 @@ const test = {
     }
 };
 
-function dataReducers(state = test.results[0], action) {
-    console.log(state);
+function dataReducers(state = null, action) {
     switch (action.type) {
         case 'UPDATE_DATA': {
             return action.payload;
@@ -76,4 +75,14 @@ function dataReducers(state = test.results[0], action) {
     }
 }
 
-export default combineReducers({data: dataReducers});
+function setLoader(state = true, action) {
+    switch (action.type) {
+        case 'SET_LOADING': {
+            return action.payload;
+        }
+        default:
+            return state;
+    }
+}
+
+export default combineReducers({data: dataReducers, loading: setLoader});
