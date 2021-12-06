@@ -75,7 +75,7 @@ function dataReducers(state = null, action) {
     }
 }
 
-function setLoader(state = true, action) {
+function loaderReducer(state = true, action) {
     switch (action.type) {
         case 'SET_LOADING': {
             return action.payload;
@@ -85,4 +85,4 @@ function setLoader(state = true, action) {
     }
 }
 
-export default combineReducers({data: dataReducers, loading: setLoader});
+export default combineReducers({data: dataReducers, loading: loaderReducer});

@@ -1,66 +1,125 @@
-
-body{
+body {
     font-family: "Source sans pro", sans-serif;
-
     padding: 0 1rem;
     background: #eee;
 }
-main{
-    margin: auto;
-    background: #fff;
-    padding: 1rem;
 
+main {
+    margin: auto;
+    position: relative;
+    margin-top: 20vh;
+}
+
+.user-details {
+    padding: 0 1rem 1rem;
+    background: #fff;
     box-shadow: #bfbfbf 1px 1px 3px;
+    position: relative;
 
 }
-.table{
+
+#title-container {
+    display: flex;
+}
+
+h1 {
+    margin: 1rem 0;
+}
+
+.location {
+    text-align-last: right;
+    font-weight: bold;
+}
+
+.ml-auto {
+    margin-left: auto;
+}
+
+img {
+    border-radius: 100%;
+    border: 5px solid #fff;
+    box-shadow: #bfbfbf 0px 2px 3px;
+    box-sizing: border-box;
+    transform: translateY(-50%);
+}
+
+.details {
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    font-weight: bold;
     width: 100%;
     border-collapse: collapse;
 
 }
 
-.table td{
-    border:1px solid #eee;
+table td {
+    border-bottom: 2px solid #eee;
     padding: .5rem;
     width: 50%;
     word-break: break-word;
 }
 
-button{
+#refresh-button {
+    display: inline-block;
+    transform: translateY(-100%);
+    position: absolute;
+    right: 0;
+    top: -1rem;
+}
+
+button {
     background: #36d2e1;
     outline: none;
     color: #ffffff;
-    padding:.5rem 1rem;
+    padding: .5rem 1rem;
     font-weight: bold;
-    border:none;
+    border: none;
     cursor: pointer;
+
+    border-radius: 3px;
+
+    box-shadow: #bfbfbf 0px 1px 2px;
+
 }
 
-button:hover,button:active,button:focus{
+button:hover,
+button:active,
+button:focus {
     background: #268491;
 
 }
 
-button:disabled{
+button:disabled {
     background: #c1c1c1;
 
 }
-#refresh-container{
-    display: flex;
+
+#refresh-container {
+
     align-items: center;
 }
-#loader:after{
-    content:" ";
+
+#refresh-button.loading:before {
+    right: 110%;
+    content: " ";
+    position: absolute;
     margin-left: 1rem;
     display: inline-block;
-    border:3px dashed #36d2e1;
+    border: 3px dashed #36d2e1;
     width: 20px;
+    top: 0;
     height: 20px;
     border-radius: 100%;
 
-    /*    transform: ;*/
-
     animation: 3s infinite normal rotate;
+}
+
+i {
+    text-shadow: 0px 2px 1px #ddd;
+    font-size: 24px;
 }
 
 @keyframes rotate {
@@ -72,12 +131,22 @@ button:disabled{
     to {
         transform: rotateZ(360deg);
 
-
     }
 }
 
-@media screen and (min-width: 1000px){
-    main{
-        max-width: 900px;
+@media screen and (min-width: 1000px) {
+    main {
+        max-width: 600px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .details {
+        flex-direction: column;
+    }
+
+    #title-container {
+        flex-direction: column;
     }
 }

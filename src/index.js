@@ -11,7 +11,6 @@ import User from "./User";
 ReactDOM.render(
     <Provider store={store}>
         <User/>
-
     </Provider>,
     document.getElementById("app")
 );
